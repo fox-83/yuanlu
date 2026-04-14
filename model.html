@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>无人机模型演示</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>无人机 glTF 模型演示</h1>
+    <p>加载无人机模型并让螺旋桨自动旋转。</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>说明</h2>
+      <p>将你的 glTF 文件放到 <code>assets/drone.gltf</code>，然后打开本页面即可。</p>
+      <p>如果你使用的是其它文件名，请修改 <code>model.html</code> 中的加载路径。</p>
+    </section>
+
+    <section class="card">
+      <div id="viewer-container" style="height: 600px;"></div>
+      <p id="status">正在加载模型...</p>
+    </section>
+  </main>
+
+  <script type="module" src="js/drone-viewer.js"></script>
+</body>
+</html>

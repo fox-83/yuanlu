@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>玫瑰</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #ffe4e1, #9f2b68 80%);
+    }
+
+    .rose {
+      width: 320px;
+      height: 380px;
+    }
+
+    .stem {
+      stroke: #2a5a2f;
+      stroke-width: 20;
+      stroke-linecap: round;
+      stroke-dasharray: 250;
+      stroke-dashoffset: 250;
+      animation: grow-stem 1.2s ease-out forwards;
+    }
+
+    .leaf {
+      fill: #2a5a2f;
+      stroke: #183a1f;
+      stroke-width: 2;
+    }
+
+    .bloom {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: 170px 220px;
+      animation: bloom 1.6s ease-out 0.6s forwards;
+    }
+
+    .petal,
+    .center {
+      transform-box: fill-box;
+      transform-origin: 170px 220px;
+      opacity: 0;
+      transform: translateY(80px) scale(0.2);
+      animation: petal-bloom 0.8s ease-out forwards;
+    }
+
+    .bloom .petal:nth-of-type(1) {
+      animation-delay: 1.0s;
+    }
+    .bloom .petal:nth-of-type(2) {
+      animation-delay: 1.15s;
+    }
+    .bloom .petal:nth-of-type(3) {
+      animation-delay: 1.3s;
+    }
+    .bloom .petal:nth-of-type(4) {
+      animation-delay: 1.45s;
+    }
+    .bloom .center {
+      animation-delay: 1.6s;
+    }
+
+    @keyframes grow-stem {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes bloom {
+      0% {
+        opacity: 0;
+        transform: translateY(140px) scale(0.2);
+      }
+      40% {
+        opacity: 0.4;
+        transform: translateY(70px) scale(0.45);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes petal-bloom {
+      0% {
+        opacity: 0;
+        transform: translateY(80px) scale(0.2);
+      }
+      60% {
+        opacity: 0.75;
+        transform: translateY(30px) scale(0.55);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .petal {
+      fill: #d7376c;
+      stroke: #9a1744;
+      stroke-width: 2;
+    }
+
+    .center {
+      fill: #f2b2c8;
+      stroke: #b6395a;
+      stroke-width: 2;
+    }
+  </style>
+</head>
+<body>
+  <svg class="rose" viewBox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+    <path class="stem" d="M170 140 C160 190 155 260 170 340" />
+    <path class="leaf" d="M150 240 C120 220 100 260 130 270 C110 260 120 300 150 280 Z" />
+    <path class="leaf" d="M190 260 C220 240 240 280 210 290 C230 280 220 320 190 300 Z" />
+    <g class="bloom">
+      <path class="petal" d="M170 140 C140 110 110 90 130 130 C90 130 100 180 140 170 C160 150 180 155 170 140 Z" />
+      <path class="petal" d="M170 140 C190 110 230 95 220 140 C255 135 240 180 205 170 C200 150 180 150 170 140 Z" />
+      <path class="petal" d="M170 140 C150 90 190 70 210 110 C215 85 255 95 235 135 C220 150 205 150 170 140 Z" />
+      <path class="petal" d="M170 140 C130 100 75 120 110 160 C100 180 130 190 150 170 C160 155 170 140 170 140 Z" />
+      <path class="center" d="M170 140 C165 120 190 110 200 130 C210 150 185 155 170 140 Z" />
+    </g>
+  </svg>
+</body>
+</html>
